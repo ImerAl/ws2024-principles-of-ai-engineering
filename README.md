@@ -175,4 +175,4 @@ ImerAl — *Principles of AI Engineering*, University of Passau (WS2024).
 
 ## License
 
-For academic use.
+Released under the [MIT License](LICENSE).

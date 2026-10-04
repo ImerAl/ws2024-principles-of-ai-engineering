@@ -1,4 +1,12 @@
-test-job01:
-    stage: test
-    script:
-    - echo "This job tests something"
+stages:
+  - test
+
+syntax-check:
+  stage: test
+  image: python:3.12
+  script:
+    # Full pytest execution is intentionally omitted: importing `flaskr`
+    # requires a running MySQL instance and the trained model artifacts
+    # (issue_classifier.pkl / vectorizer.pkl), which are not versioned.
+    - python -m compileall -q flaskr tests
+    - echo "Syntax check passed."

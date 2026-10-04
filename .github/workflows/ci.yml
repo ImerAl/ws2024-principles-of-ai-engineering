@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  syntax:
+    name: Python syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Full pytest execution is not run here on purpose:
+      # importing `flaskr` opens a MySQL connection and loads the trained
+      # model artifacts (issue_classifier.pkl / vectorizer.pkl), which are
+      # not versioned because of their size. This job guards against syntax
+      # errors until a test environment (MySQL service + model files) is set up.
+      - name: Compile all Python sources
+        run: python -m compileall -q flaskr tests
+
+      - name: Report
+        run: echo "Syntax check passed."
