@@ -1,0 +1,4 @@
+test-job01:
+    stage: test
+    script:
+    - echo "This job tests something"

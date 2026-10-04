@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <form action="{{ url_for('predict') }}" method="POST">
+                <label>Title:</label><br>
+                <input type="text" size="100" name="title" required><br>
+                <label>Description:</label><br>
+                <textarea rows="10" cols="95" name="description" required></textarea><br>
+                <input type="submit" value="Predict">
+            </form>
+        </div>
+
+        <div class="container">
+            <form action="{{ url_for('correct') }}" method="POST">
+                <label>Id:</label><br>
+                <input type="text" size="20" name="id" readonly><br>
+
+                <input type="radio" value="enhancement" id="enhancement" name="radio">
+                <label for="Enhancement">Enhancement</label><br>
+
+                <input type="radio" value="bug" id="bug" name="radio">
+                <label for="Bug">Bug</label><br>
+
+                <input type="radio" value="question" id="question" name="radio">
+                <label for="Question">Question</label><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        {% if data %}
+        <script>
+            
+            const form_data = {{ data | tojson | safe }};
+            const id = document.getElementsByName('id')[0];
+            id.value = form_data.id;
+
+            prediction = form_data.predicted;
+
+            document.getElementById(prediction).checked = true;
+
+
+        </script>
+        {% endif %}
+        {% if message %}
+        <script>
+            const jsonmessage = {{ message | tojson | safe }};
+            alert(jsonmessage.message)
+        </script>
+        {% endif %}
+        
+    </body> 
+</html>

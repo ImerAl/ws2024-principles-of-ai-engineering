@@ -1,0 +1,105 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3e5f5; /* Light purple background */
+    color: #2e004f; /* Dark purple text */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff; /* White container */
+    border: 2px solid #7e57c2; /* Medium purple border */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    border: 1px solid #b39ddb; /* Light purple border */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.container input[type="submit"] {
+    background-color: #7e57c2; /* Medium purple button */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #5e35b1; /* Darker purple on hover */
+}
+
+.radio-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid #7e57c2; /* Medium purple border */
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ede7f6; /* Light purple background */
+}
+
+.radio-container input[type="submit"] {
+    background-color: #7e57c2; /* Medium purple button */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.radio-container input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.radio-container label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.radio-container input[type="submit"] {
+    background-color: #7e57c2; /* Medium purple button */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.radio-container input[type="submit"]:hover {
+    background-color: #5e35b1; /* Darker purple on hover */
+}
